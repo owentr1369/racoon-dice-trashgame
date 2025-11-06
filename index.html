@@ -15,12 +15,15 @@
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             perspective: 1000px;
-            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
         }
 
         .container {
@@ -41,11 +44,11 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.8s ease-in-out;
         }
 
         .dice.rolling {
-            animation: roll 1s ease-in-out;
+            animation: roll 0.8s ease-in-out;
         }
 
         @keyframes roll {
@@ -289,10 +292,75 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             min-height: 30px;
         }
+
+        .version {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 15px 20px;
+            color: white;
+            font-size: 14px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .credit {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 15px 20px;
+            color: white;
+            font-size: 14px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .credit a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .credit a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+
+            .version,
+            .credit {
+                font-size: 12px;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .version,
+            .credit {
+                font-size: 11px;
+                padding: 10px 12px;
+            }
+
+            .container {
+                margin-bottom: 60px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="version">
+        v1.0.1
+    </div>
+
     <div class="container">
         <div class="dice-container" onclick="rollDice()">
             <div class="dice" id="dice">
@@ -335,6 +403,10 @@
         <!-- <div class="result" id="result"></div> -->
     </div>
 
+    <div class="credit">
+        Made by <a href="https://github.com/owentr1369" target="_blank" rel="noopener noreferrer">Owen Dev</a>
+    </div>
+
     <script>
         function rollDice() {
             const dice = document.getElementById('dice');
@@ -361,7 +433,7 @@
                 dice.classList.remove('rolling');
                 dice.style.transform = rotations[randomNumber];
                 // result.textContent = `You rolled: ${randomNumber}`;
-            }, 1500);
+            }, 1200);
         }
     </script>
 </body>
