@@ -112,8 +112,8 @@
 
         /* Image styling for dice faces */
         .face img {
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: auto;
             object-fit: cover;
             border-radius: 18px;
         }
@@ -298,38 +298,32 @@
             <div class="dice" id="dice">
                 <!-- Face 1 (Front) -->
                 <div class="face front">
-                    <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="Face 1">
+                    <img src="raccoon/tree-trash.png" alt="Face 1">
                 </div>
 
                 <!-- Face 2 (Back) -->
                 <div class="face back">
-                    <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="Face 2">
+                    <img src="raccoon/steal.png" alt="Face 2">
                 </div>
 
                 <!-- Face 3 (Right) -->
                 <div class="face right">
-                    <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="Face 3">
+                    <img src="raccoon/recycle.png" alt="Face 3">
                 </div>
 
                 <!-- Face 4 (Left) -->
                 <div class="face left">
-                    <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="Face 4">
+                    <img src="raccoon/eyes.png" alt="Face 4">
                 </div>
 
                 <!-- Face 5 (Top) -->
                 <div class="face top">
-                    <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="Face 5">
+                    <img src="raccoon/2-trees.png" alt="Face 5">
                 </div>
 
                 <!-- Face 6 (Bottom) -->
                 <div class="face bottom">
-                    <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740&q=80"
-                        alt="Face 6">
+                    <img src="raccoon/2-trash.png" alt="Face 6">
                 </div>
             </div>
         </div>
@@ -338,13 +332,13 @@
             Click the dice to roll!
         </div>
 
-        <div class="result" id="result"></div>
+        <!-- <div class="result" id="result"></div> -->
     </div>
 
     <script>
         function rollDice() {
             const dice = document.getElementById('dice');
-            const result = document.getElementById('result');
+            // const result = document.getElementById('result');
 
             // Add rolling animation
             dice.classList.add('rolling');
@@ -366,8 +360,8 @@
             setTimeout(() => {
                 dice.classList.remove('rolling');
                 dice.style.transform = rotations[randomNumber];
-                result.textContent = `You rolled: ${randomNumber}`;
-            }, 1000);
+                // result.textContent = `You rolled: ${randomNumber}`;
+            }, 1500);
         }
     </script>
 </body>
