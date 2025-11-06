@@ -408,9 +408,17 @@
     </div>
 
     <script>
+        let isRolling = false;
+
         function rollDice() {
+            // Prevent rolling if already in progress
+            if (isRolling) return;
+
             const dice = document.getElementById('dice');
             // const result = document.getElementById('result');
+
+            // Set rolling state
+            isRolling = true;
 
             // Add rolling animation
             dice.classList.add('rolling');
@@ -433,6 +441,9 @@
                 dice.classList.remove('rolling');
                 dice.style.transform = rotations[randomNumber];
                 // result.textContent = `You rolled: ${randomNumber}`;
+
+                // Reset rolling state
+                isRolling = false;
             }, 1200);
         }
     </script>
